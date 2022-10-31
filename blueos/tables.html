@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Table with filters</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .jumbotron {
+            color: white;
+            background-image: url("https://images.unsplash.com/photo-1438109491414-7198515b166b?q=80&fm=jpg&s=cbdabf7a79c087a0b060670a6d79726c");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 30vh;
+        }
+        #table_filter input {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+    <div id="menu-container">
+        <nav class="navbar navbar-expand-lg" style="background:transparent; position: absolute">
+            <div class="container">
+                <a class="font-weight-bold navbar-brand text-white" href="#">Awesome Brand</a>
+            </div>
+        </nav>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container pt-4">
+                <h1 class="display-4">Table Template</h1>
+                <p>An example of template of top instagram accounts.</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="filters-container"></div>
+    <div class="container-fluid" id="table-container">
+
+        <!-- This gets replaced when we have some records -->
+        <div class="text-center p-5 m-5">
+            <div class="text-muted p-2">Loading table...</div>
+            <div class="spinner-border text-primary" role="status"></div>
+        </div>
+    </div>
+    <div class="container" id="footer">
+        <div class="text-muted text-center p-3">Powered by <a href="https://www.bluecommunity.info" target="_blank">Blue Community</a>
+        </div>
+    </div>
+
+    <script>
+        // Replace this with your sheet2api API URL
+        var apiUrl = 'https://sheet2api.com/v1/jNdvqtyQTCGe/slim-blueall/NEWALLBLUE';
+        // Replace this with the spreadsheet column you would like to be able to filter by
+        var filterBy = 'Category';
+
+        var dataTable = null;
+
+        // Called once the page has loaded
+        document.addEventListener('DOMContentLoaded', function (event) {
+            loadData();
+            elementReady('#table').then((table) => {
+                dataTable = $(table).DataTable({ paging: false, select: true, searching: true });
+            });
+            setupNavListener()
+
+        });
+
+        function setupNavListener() {
+            elementReady('#filters-nav').then((el) => {
+                $("#filters-nav .nav-link").on("click", function () {
+                    $("#filters-nav").find(".active").removeClass("active");
+                    $(this).addClass("active");
+                });
+            });
+        }
+
+        function elementReady(selector) {
+            return new Promise((resolve, reject) => {
+                const el = document.querySelector(selector);
+                if (el) { resolve(el); }
+                new MutationObserver((mutationRecords, observer) => {
+                    // Query for elements matching the specified selector
+                    Array.from(document.querySelectorAll(selector)).forEach((element) => {
+                        resolve(element);
+                        //Once we have resolved we don't need the observer anymore.
+                        observer.disconnect();
+                    });
+                })
+                    .observe(document.documentElement, {
+                        childList: true,
+                        subtree: true
+                    });
+            });
+        }
+
+        function loadData() {
+            fetch(apiUrl)
+                .then((response) => response.json())
+                .then(json => {
+                    this.rows = json;
+                    this.cols = Object.keys(this.rows[0])
+                    this.filters = []
+                    for (var row in this.rows) {
+                        var value = this.rows[row][filterBy];
+                        if (!this.filters.includes(value)) {
+                            this.filters.push(value)
+                        }
+                    }
+                    outputRows(this.rows);
+                    outputFilters();
+                });
+        }
+
+        function outputRows(rows) {
+            var template = Handlebars.compile(document.getElementById("table-template").innerHTML);
+            document.getElementById('table-container').innerHTML = template({
+                rows: rows,
+                cols: cols
+            });
+        }
+
+        function outputFilters() {
+            var template = Handlebars.compile(document.getElementById("filters-template").innerHTML);
+            document.getElementById('filters-container').innerHTML = template(this.filters);
+        }
+
+        function filterRows(filterValue) {
+            dataTable.search(filterValue).draw();
+        }
+    </script>
+
+    <!-- Template for the menu / filters -->
+    <script id="filters-template" type="text/x-handlebars-template">
+
+        <div class="container mb-3">
+            <ul class="nav nav-center nav-pills" id="filters-nav">
+                <li class="nav-item mx-auto">
+                <a class="nav-link active"  href="#" onclick="filterRows('');">All</a>
+                </li>
+                {{#each this as |filterValue|}}
+                <li class="nav-item mx-auto">
+                    <a class="nav-link" href="#" onclick="filterRows('{{filterValue}}');">{{filterValue}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </script>
+
+    <!-- Template for the table -->
+    <script id="table-template" type="text/x-handlebars-template">
+        <table id="table" class="table table-hover mb-4">
+            <thead class="thead-light">
+                <tr>
+                    {{#each this.cols as |col|}}
+                    <th>{{col}}</th>
+                    {{/each}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.rows as |records|}}
+                <tr>
+                    {{#each records as |record|}}
+                    <td>{{record}}</td>
+                    {{/each}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+</body>
+
+</html>
