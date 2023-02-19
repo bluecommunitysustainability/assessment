@@ -34,8 +34,7 @@ nav .button{
 /*header*/
 header{ 
   padding:30px;  
-  background-image: url("https://bluecommunitysustainability.github.io/assessment/zilla/app/img/loadingzilla.gif"); no-repeat; max-width:100%;
-  filter:grayscale( 0% );  background-size: cover;
+  body {background:#343541;color:white}filter:grayscale( 0% );  background-size: cover;
   background-position: center center;   
 }
 #left{
@@ -142,7 +141,7 @@ aside img{
 
 /*footer*/
 footer{
-  background:url("https://bluecommunitysustainability.github.io/assessment/zilla/app/img/loadingzillared.gif");
+body {background:#343541;color:white}
     text-align:center;
   background-size: cover;
 }
