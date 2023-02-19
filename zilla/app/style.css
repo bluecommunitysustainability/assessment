@@ -34,7 +34,7 @@ nav .button{
 /*header*/
 header{ 
   padding:30px;  
-  background-image: url("http://orig06.deviantart.net/8ff3/f/2012/198/7/1/fading_colors_by_nxxos-d57kk4d.jpg"); no-repeat; max-width:100%;
+  background-image: url("https://bluecommunitysustainability.github.io/assessment/zilla/app/img/loadingzilla.gif"); no-repeat; max-width:100%;
   filter:grayscale( 0% );  
   background-position: center center;   
 }
@@ -142,7 +142,7 @@ aside img{
 
 /*footer*/
 footer{
-  background:url("http://orig06.deviantart.net/8ff3/f/2012/198/7/1/fading_colors_by_nxxos-d57kk4d.jpg");
+  background:url("https://bluecommunitysustainability.github.io/assessment/zilla/app/img/loadingzillared.gif");
     text-align:center;
 }
 footer h4{
