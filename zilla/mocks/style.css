@@ -1,0 +1,50 @@
+.frame1 {
+  background-image: url('https://storage.ning.com/topology/rest/1.0/file/get/10978038661?profile=RESIZE_400x');
+}
+.frame2 {
+  background-image: url('https://storage.ning.com/topology/rest/1.0/file/get/10978038670?profile=RESIZE_400x');
+}
+.frame3 {
+  background-image: url('https://storage.ning.com/topology/rest/1.0/file/get/10978038497?profile=RESIZE_400x');
+}
+
+.frame4 {
+  background-image: url('https://storage.ning.com/topology/rest/1.0/file/get/10978038858?profile=RESIZE_400x');
+}
+
+.frame {
+  display: inline-block;
+  width: 300px;
+  height: 500px;
+  background-color: grey;
+  background-position: center;
+  background-size: cover;
+  margin-right: -20px;
+  position: relative;
+  border: 1px solid #ddd;
+}
+.frame:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  bottom: -50px;
+  background: #eee;
+  box-shadow: 0 0 30px black, 0 0 30px black, 0 0 30px black;
+}
+.frame1 {
+  margin-right: 0;
+}
+.frame2 {
+  transform: rotateY(-30deg);
+}
+.frame3 {
+  transform: rotateY(-40deg);
+}
+.frame4 {
+  transform: rotateY(-60deg);
+}
+.container {
+  perspective: 800px;
+  padding: 60px
+}
