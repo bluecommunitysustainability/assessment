@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grant Proposal CSV</title>
+    <script>
+        function convertFormToCSV(form) {
+            var csv = "";
+            var inputs = form.elements;
+            for (var i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                if (input.tagName === "INPUT" && input.type !== "submit") {
+                    var name = input.name;
+                    var value = input.value;
+                    csv += name + "," + value + "\n";
+                }
+            }
+            return csv;
+        }
+        
+        function downloadCSV(csv) {
+            var link = document.createElement("a");
+            link.setAttribute("href", "data:text/csv;charset=utf-8," + encodeURIComponent(csv));
+            link.setAttribute("download", "grant_proposal.csv");
+            link.style.display = "none";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        function handleFormSubmit(form) {
+            var csv = convertFormToCSV(form);
+            downloadCSV(csv);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Grant Proposal CSV</h1>
+
+        <h2>Cover Letter</h2>
+        <form onsubmit="event.preventDefault(); handleFormSubmit(this);">
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Data</th>
+                </tr>
+                <tr>
+                    <td>Organization Name:</td>
+                    <td><input type="text" id="orgName" name="orgName"></td>
+                </tr>
+                <tr>
+                    <td>Founded:</td>
+                    <td><input type="text" id="founded" name="founded"></td>
+                </tr>
+                <tr>
+                    <td>Website:</td>
+                    <td><input type="text" id="website" name="website"></td>
+                </tr>
+                <tr>
+                    <td>Date:</td>
+                    <td><input type="text" id="date" name="date"></td>
+                </tr>
+                <tr>
+                    <td>Grant Source:</td>
+                    <td><input type="text" id="grantSource" name="grantSource"></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" id="address" name="address"></td>
+                </tr>
+                <tr>
+                    <td>Dear:</td>
+                    <td><input type="text" id="recipient" name="recipient"></td>
+                </tr>
+            </table>
+            
+            <!-- Add more tables for each section of the form -->
+            
+            <button type="submit">Export to CSV</button>
+        </form>
+    </div>
+</body>
+</html>
