@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grant Proposal Spreadsheet</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle form submission
+            $('form').submit(function(e) {
+                e.preventDefault(); // Prevent form submission
+                
+                // Convert form data to CSV format
+                var csvContent = "data:text/csv;charset=utf-8,";
+                $(this).find('input').each(function() {
+                    var name = $(this).attr('name');
+                    var value = $(this).val();
+                    csvContent += name + ',' + value + '\n';
+                });
+                
+                // Create a temporary download link
+                var encodedUri = encodeURI(csvContent);
+                var link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "grant_proposal.csv");
+                document.body.appendChild(link);
+                
+                // Trigger the download
+                link.click();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Grant Proposal Spreadsheet</h1>
+
+        <h2>Cover Letter</h2>
+        <form>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Data</th>
+                </tr>
+                <tr>
+                    <td>Organization Name:</td>
+                    <td><input type="text" id="orgName" name="orgName"></td>
+                </tr>
+                <tr>
+                    <td>Founded:</td>
+                    <td><input type="text" id="founded" name="founded"></td>
+                </tr>
+                <tr>
+                    <td>Website:</td>
+                    <td><input type="text" id="website" name="website"></td>
+                </tr>
+                <tr>
+                    <td>Date:</td>
+                    <td><input type="text" id="date" name="date"></td>
+                </tr>
+                <tr>
+                    <td>Grant Source:</td>
+                    <td><input type="text" id="grantSource" name="grantSource"></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" id="address" name="address"></td>
+                </tr>
+                <tr>
+                    <td>Dear:</td>
+                    <td><input type="text" id="recipient" name="recipient"></td>
+                </tr>
+            </table>
+            
+            <!-- Add more tables for each section of the form -->
+            
+            <button type="submit">Export to Excel</button>
+        </form>
+    </div>
+</body>
+</html>
