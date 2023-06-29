@@ -1,0 +1,265 @@
+<html>
+<head>
+    <title>Grant Proposal - Review</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Grant Proposal - Review</h1>
+
+        <h2>Cover Letter</h2>
+        <p>
+            Organization Name: <span id="reviewOrgName"></span><br>
+            Founded: <span id="reviewFounded"></span><br>
+            Website: <span id="reviewWebsite"></span><br><br>
+            
+            Date: <span id="reviewDate"></span><br><br>
+            
+            Grant Source: <span id="reviewGrantSource"></span><br>
+            Address: <span id="reviewAddress"></span><br><br>
+            
+            Dear: <span id="reviewRecipient"></span>
+        </p>
+        <p>
+            We are excited to submit the grant proposal for <span id="reviewProjectName"></span> to your esteemed organization. As a dedicated <span id="reviewMission"></span> organization, we are committed to creating positive change through regenerative placemaking, environmental sustainability, and humanitarian initiatives.
+        </p>
+        <p>
+            We believe that <span id="reviewGrantSource2"></span>'s focus on <span id="reviewGrantDescription"></span> aligns perfectly with our project goals and aspirations. With this grant, we aim to make a lasting impact on our community and contribute to a sustainable future.
+        </p>
+        <p>
+            We appreciate your time and consideration in reviewing our proposal. We look forward to the opportunity of discussing our project further and exploring how we can collaborate to create a better world.
+        </p>
+        <p>
+            Sincerely,<br>
+            <span id="reviewYourName"></span><br>
+            <span id="reviewTitle"></span><br>
+            <span id="reviewOrgName2"></span>
+        </p>
+
+        <h2>Project Introduction</h2>
+        <p>
+            <span id="reviewProjectName2"></span> is an innovative initiative aimed at <span id="reviewProjectDescription"></span>. This project will address the critical challenges of <span id="reviewChallenges"></span> by leveraging the principles of regenerative placemaking and environmental sustainability.
+        </p>
+
+        <h2>Project Setup</h2>
+        <p>
+            <span id="reviewProjectName3"></span> will be implemented in collaboration with key stakeholders, including community organizations, local government, and academic institutions. Through this collaborative approach, we will ensure the project's success and sustainability.
+        </p>
+
+        <h2>Project Goals</h2>
+        <p>
+            The primary goals of <span id="reviewProjectName4"></span> are:
+            <ul>
+                <li>Goal 1: <span id="reviewGoal1"></span></li>
+                <li>Goal 2: <span id="reviewGoal2"></span></li>
+                <li>Goal 3: <span id="reviewGoal3"></span></li>
+            </ul>
+        </p>
+
+        <h2>Needs Assessment</h2>
+        <p>
+            Through a comprehensive needs assessment, we have identified the following key needs within our community that <span id="reviewProjectName5"></span> aims to address:
+            <ul>
+                <li>Need 1: <span id="reviewNeed1"></span></li>
+                <li>Need 2: <span id="reviewNeed2"></span></li>
+                <li>Need 3: <span id="reviewNeed3"></span></li>
+            </ul>
+        </p>
+
+        <h2>Methodology</h2>
+        <p>
+            <span id="reviewProjectName6"></span> will be implemented using the following methodology:
+            <ul>
+                <li>Step 1: <span id="reviewStep1"></span></li>
+                <li>Step 2: <span id="reviewStep2"></span></li>
+                <li>Step 3: <span id="reviewStep3"></span></li>
+            </ul>
+        </p>
+
+        <h2>Evaluation</h2>
+        <p>
+            To ensure the effectiveness of <span id="reviewProjectName7"></span>, we will conduct a thorough evaluation using both qualitative and quantitative measures. The evaluation will focus on assessing the impact of the project on <span id="reviewEvaluationFocus"></span>.
+        </p>
+
+        <h2>Budget</h2>
+        <p>
+            The proposed budget for <span id="reviewProjectName8"></span> is as follows:
+            <ul>
+                <li>Category 1: <span id="reviewBudgetCategory1"></span>: $<span id="reviewAmount1"></span></li>
+                <li>Category 2: <span id="reviewBudgetCategory2"></span>: $<span id="reviewAmount2"></span></li>
+                <li>Category 3: <span id="reviewBudgetCategory3"></span>: $<span id="reviewAmount3"></span></li>
+                <li>Total Budget: $<span id="reviewTotalBudget"></span></li>
+            </ul>
+        </p>
+
+        <h2>Sustainability Plan</h2>
+        <p>
+            <span id="reviewProjectName9"></span> is designed to be sustainable beyond the grant period. We have developed a comprehensive sustainability plan that includes:
+            <ul>
+                <li>Plan 1: <span id="reviewSustainabilityPlan1"></span></li>
+                <li>Plan 2: <span id="reviewSustainabilityPlan2"></span></li>
+                <li>Plan 3: <span id="reviewSustainabilityPlan3"></span></li>
+            </ul>
+        </p>
+
+        <h2>Appendices</h2>
+        <p>
+            The appendices include supporting documents and additional information relevant to <span id="reviewProjectName10"></span>. These documents include:
+            <ul>
+                <li>Appendix 1: <span id="reviewAppendix1"></span></li>
+                <li>Appendix 2: <span id="reviewAppendix2"></span></li>
+                <li>Appendix 3: <span id="reviewAppendix3"></span></li>
+            </ul>
+        </p>
+    </div>
+
+    <script>
+        // Retrieve form data from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Update the content of each <span> element with the retrieved values
+        document.getElementById("reviewOrgName").textContent = urlParams.get("orgName");
+        document.getElementById("reviewFounded").textContent = urlParams.get("founded");
+        document.getElementById("reviewWebsite").textContent = urlParams.get("website");
+        document.getElementById("reviewDate").textContent = urlParams.get("date");
+        document.getElementById("reviewGrantSource").textContent = urlParams.get("grantSource");
+        document.getElementById("reviewAddress").textContent = urlParams.get("address");
+        document.getElementById("reviewRecipient").textContent = urlParams.get("recipient");
+        document.getElementById("reviewProjectName").textContent = urlParams.get("projectName");
+        document.getElementById("reviewMission").textContent = urlParams.get("mission");
+        document.getElementById("reviewGrantSource2").textContent = urlParams.get("grantSource");
+        document.getElementById("reviewGrantDescription").textContent = urlParams.get("grantDescription");
+        document.getElementById("reviewYourName").textContent = urlParams.get("yourName");
+        document.getElementById("reviewTitle").textContent = urlParams.get("title");
+        document.getElementById("reviewOrgName2").textContent = urlParams.get("orgName");
+        document.getElementById("reviewProjectName2").textContent = urlParams.get("projectName");
+        document.getElementById("reviewProjectDescription").textContent = urlParams.get("projectDescription");
+        document.getElementById("reviewChallenges").textContent = urlParams.get("challenges");
+        document.getElementById("reviewProjectName3").textContent = urlParams.get("projectName");
+        document.getElementById("reviewProjectName4").textContent = urlParams.get("projectName");
+        document.getElementById("reviewGoal1").textContent = urlParams.get("goal1");
+        document.getElementById("reviewGoal2").textContent = urlParams.get("goal2");
+        document.getElementById("reviewGoal3").textContent = urlParams.get("goal3");
+        document.getElementById("reviewProjectName5").textContent = urlParams.get("projectName");
+        document.getElementById("reviewNeed1").textContent = urlParams.get("need1");
+        document.getElementById("reviewNeed2").textContent = urlParams.get("need2");
+        document.getElementById("reviewNeed3").textContent = urlParams.get("need3");
+        document.getElementById("reviewProjectName6").textContent = urlParams.get("projectName");
+        document.getElementById("reviewStep1").textContent = urlParams.get("step1");
+        document.getElementById("reviewStep2").textContent = urlParams.get("step2");
+        document.getElementById("reviewStep3").textContent = urlParams.get("step3");
+        document.getElementById("reviewProjectName7").textContent = urlParams.get("projectName");
+        document.getElementById("reviewEvaluationFocus").textContent = urlParams.get("evaluationFocus");
+        document.getElementById("reviewProjectName8").textContent = urlParams.get("projectName");
+        document.getElementById("reviewBudgetCategory1").textContent = urlParams.get("budgetCategory1");
+        document.getElementById("reviewAmount1").textContent = urlParams.get("amount1");
+        document.getElementById("reviewBudgetCategory2").textContent = urlParams.get("budgetCategory2");
+        document.getElementById("reviewAmount2").textContent = urlParams.get("amount2");
+        document.getElementById("reviewBudgetCategory3").textContent = urlParams.get("budgetCategory3");
+        document.getElementById("reviewAmount3").textContent = urlParams.get("amount3");
+        document.getElementById("reviewTotalBudget").textContent = urlParams.get("totalBudget");
+        document.getElementById("reviewProjectName9").textContent = urlParams.get("projectName");
+        document.getElementById("reviewSustainabilityPlan1").textContent = urlParams.get("sustainabilityPlan1");
+        document.getElementById("reviewSustainabilityPlan2").textContent = urlParams.get("sustainabilityPlan2");
+        document.getElementById("reviewSustainabilityPlan3").textContent = urlParams.get("sustainabilityPlan3");
+        document.getElementById("reviewProjectName10").textContent = urlParams.get("projectName");
+        document.getElementById("reviewAppendix1").textContent = urlParams.get("appendix1");
+        document.getElementById("reviewAppendix2").textContent = urlParams.get("appendix2");
+        document.getElementById("reviewAppendix3").textContent = urlParams.get("appendix3");
+    </script>
+    <script>
+    // Assuming the form data is stored in an object called "formData"
+const urlParams = new URLSearchParams(formData);
+const url = "review.html?" + urlParams.toString();
+
+// Redirect the user to the review page
+window.location.href = url;
+
+    </script>
+    <script>
+    // Retrieve form inputs by their IDs or other appropriate selectors
+const orgName = document.getElementById("orgName").value;
+const founded = document.getElementById("founded").value;
+const website = document.getElementById("website").value;
+const date = document.getElementById("date").value;
+const grantSource = document.getElementById("grantSource").value;
+const address = document.getElementById("address").value;
+const recipient = document.getElementById("recipient").value;
+const projectName = document.getElementById("projectName").value;
+const mission = document.getElementById("mission").value;
+const grantSource2 = document.getElementById("grantSource2").value;
+const grantDescription = document.getElementById("grantDescription").value;
+const yourName = document.getElementById("yourName").value;
+const title = document.getElementById("title").value;
+const orgName2 = document.getElementById("orgName2").value;
+const projectDescription = document.getElementById("projectDescription").value;
+const challenges = document.getElementById("challenges").value;
+const goal1 = document.getElementById("goal1").value;
+const goal2 = document.getElementById("goal2").value;
+const goal3 = document.getElementById("goal3").value;
+const need1 = document.getElementById("need1").value;
+const need2 = document.getElementById("need2").value;
+const need3 = document.getElementById("need3").value;
+const step1 = document.getElementById("step1").value;
+const step2 = document.getElementById("step2").value;
+const step3 = document.getElementById("step3").value;
+const evaluationFocus = document.getElementById("evaluationFocus").value;
+const budgetCategory1 = document.getElementById("budgetCategory1").value;
+const amount1 = document.getElementById("amount1").value;
+const budgetCategory2 = document.getElementById("budgetCategory2").value;
+const amount2 = document.getElementById("amount2").value;
+const budgetCategory3 = document.getElementById("budgetCategory3").value;
+const amount3 = document.getElementById("amount3").value;
+const totalBudget = document.getElementById("totalBudget").value;
+const sustainabilityPlan1 = document.getElementById("sustainabilityPlan1").value;
+const sustainabilityPlan2 = document.getElementById("sustainabilityPlan2").value;
+const sustainabilityPlan3 = document.getElementById("sustainabilityPlan3").value;
+const appendix1 = document.getElementById("appendix1").value;
+const appendix2 = document.getElementById("appendix2").value;
+const appendix3 = document.getElementById("appendix3").value;
+
+// Create the formData object and assign values to its properties
+const formData = {
+  orgName: orgName,
+  founded: founded,
+  website: website,
+  date: date,
+  grantSource: grantSource,
+  address: address,
+  recipient: recipient,
+  projectName: projectName,
+  mission: mission,
+  grantSource2: grantSource2,
+  grantDescription: grantDescription,
+  yourName: yourName,
+  title: title,
+  orgName2: orgName2,
+  projectDescription: projectDescription,
+  challenges: challenges,
+  goal1: goal1,
+  goal2: goal2,
+  goal3: goal3,
+  need1: need1,
+  need2: need2,
+  need3: need3,
+  step1: step1,
+  step2: step2,
+  step3: step3,
+  evaluationFocus: evaluationFocus,
+  budgetCategory1: budgetCategory1,
+  amount1: amount1,
+  budgetCategory2: budgetCategory2,
+  amount2: amount2,
+  budgetCategory3: budgetCategory3,
+  amount3: amount3,
+  totalBudget: totalBudget,
+  sustainabilityPlan1: sustainabilityPlan1,
+  sustainabilityPlan2: sustainabilityPlan2,
+  sustainabilityPlan3: sustainabilityPlan3,
+  appendix1: appendix1,
+  appendix2: appendix2,
+  appendix3: appendix3
+};
+
+    </script>
+</body>
+</html>
